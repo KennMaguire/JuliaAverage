@@ -36,8 +36,14 @@ function askForInput(_inputInt)
         x = parse(Int, chomp(n)) #convert string to int
         push!(_listLen, x)       #append int to end of the array
     end
+    println(listLen) 
     return _listLen
 end
+
+
+
+
+
 
 
 println("Please enter the number of integers you'd like to average")
@@ -45,12 +51,7 @@ println("Please enter the number of integers you'd like to average")
 inputStr = readline()
 inputInt = parse(Int, chomp(inputStr))
 
-
-
 print("\n")
-#println(length(listLen))
-listLen = askForInput(inputInt)
+listLen = askForInput(inputInt) # get input from user
 
-aver(listLen)
-
-println(listLen)
+aver(listLen)   # get average of values from user
