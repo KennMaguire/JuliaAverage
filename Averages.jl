@@ -24,16 +24,16 @@ function aver(a)
     end
     print("\n")
     println("The sum is: " * string(sum))
-    average = (sum/length(a))
+    average = trunc(Int,(sum/length(a)))
     println("The average is: " * string(average))
-    greatThanAverage(a, average)
+    greaterThanAverage(a, average)
 end
 
 function greaterThanAverage(a, ave)
     i = 1
     counter = 0 #counter for number of values greater than average
     while i <= length(a)
-        if ave > a[i]
+        if ave < a[i]
             counter += 1
         end
         i += 1
@@ -69,14 +69,16 @@ end
 
 #Ask for, and read input in from the user
 
-println("Please enter the number of integers you'd like to average (less than 100)")
+println("Please enter the number of integers you'd like to average (between 0-100)")
 inputStr = readline()
 inputInt = parse(Int, chomp(inputStr))
 
 
-if inputInt > 100 || inputInt < 1
-
-end
+if inputInt > 99 || inputInt < 1
+    printstyled(".\n.\n.\n.\n.\n.\n.\n.\n.\n.\n.\n", bold=true, color=:light_red)          #print a bunch of dots and call again
+    printstyled(uppercase("That is not a value between 0-100"), bold=true, color=:light_red)
+    printstyled(".\n.\n.\n.\n", bold=true, color=:light_red)
+    include("Averages.jl")
 else
     #Call the askForInput function to get input from the user
     print("\n")
