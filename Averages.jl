@@ -24,7 +24,7 @@ function aver(a)
     end
     print("\n")
     println("The sum is: " * string(sum))
-    average = trunc(Int,(sum/length(a)))
+    average = trunc(Int,(sum/length(a)))            #get integer value for average
     println("The average is: " * string(average))
     greaterThanAverage(a, average)
 end
