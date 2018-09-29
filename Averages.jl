@@ -6,7 +6,7 @@ Averages.jl
 Kenneth Maguire
 Program 1
 
-This program ask the user for a number of integers, they'd like to average, asks for
+This program asks the user for a number of integers, they'd like to average, asks for
 the numbers they'd like to average, finds the average, and outputs the following
 
 i)   The list
@@ -40,8 +40,8 @@ function aver(a)
     average = 0
     print("The list contains: ")
     while i <= length(a)
-        print(a[i])
-        sum += a[i]
+        print(a[i])     #print each val in list
+        sum += a[i]     #collect the sum
         i += 1
         if i <= length(a)
             print(", ")
@@ -57,7 +57,7 @@ end
 function greaterThanAverage(a, ave::Integer)
     i = 1
     counter = 0 #counter for number of values greater than average
-    while i <= length(a)
+    while i <= length(a) #parse list, and find values greater than average in list
         if ave < a[i]
             counter += 1
         end
@@ -71,7 +71,7 @@ function greaterThanAverage(a, ave::Integer)
 end
 
 
-
+#MAIN FUNCTION
 #Ask for, and read input in from the user
 
 println("Please enter the number of integers you'd like to average (between 0-100)")
