@@ -6,6 +6,14 @@ Averages.jl
 Kenneth Maguire
 Program 1
 
+This program ask the user for a number of integers, they'd like to average, asks for
+the numbers they'd like to average, finds the average, and outputs the following
+
+i)   The list
+ii)  The values contained in the list
+iii) The sum of the integers
+iv)  The average
+v)   The number of values greater than the average
 
 =#
 
@@ -29,7 +37,7 @@ function aver(a)
     greaterThanAverage(a, average)
 end
 
-function greaterThanAverage(a, ave)
+function greaterThanAverage(a, ave::Integer)
     i = 1
     counter = 0 #counter for number of values greater than average
     while i <= length(a)
@@ -44,8 +52,8 @@ function greaterThanAverage(a, ave)
 
 
 end
-
-function askForInput(_inputInt)
+#Returns array named _listlen
+function askForInput(_inputInt::Integer)
     print("\n")
     _listLen = Int64[]
     i = 1
@@ -62,16 +70,11 @@ function askForInput(_inputInt)
 end
 
 
-
-
-
-
-
 #Ask for, and read input in from the user
 
 println("Please enter the number of integers you'd like to average (between 0-100)")
 inputStr = readline()
-inputInt = parse(Int, chomp(inputStr))
+inputInt = parse(Int, chomp(inputStr)) #will always be an int
 
 
 if inputInt > 99 || inputInt < 1
