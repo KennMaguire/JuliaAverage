@@ -17,6 +17,23 @@ v)   The number of values greater than the average
 
 =#
 
+#Returns array named _listlen
+function askForInput(_inputInt::Integer)
+    print("\n")
+    _listLen = Int64[]
+    i = 1
+    println("Please enter " * string(_inputInt) * " integers")
+    while  i <= _inputInt
+        i += 1
+        n = readline()      #read string value from term
+        x = parse(Int, chomp(n)) #convert string to int
+        push!(_listLen, x)       #append int to end of the array
+    end
+    print("The list is: ")
+    println(_listLen)
+    return _listLen
+end
+
 function aver(a)
     i = 1
     sum = 0
@@ -52,22 +69,7 @@ function greaterThanAverage(a, ave::Integer)
 
 
 end
-#Returns array named _listlen
-function askForInput(_inputInt::Integer)
-    print("\n")
-    _listLen = Int64[]
-    i = 1
-    println("Please enter " * string(_inputInt) * " integers")
-    while  i <= _inputInt
-        i += 1
-        n = readline()      #read string value from term
-        x = parse(Int, chomp(n)) #convert string to int
-        push!(_listLen, x)       #append int to end of the array
-    end
-    print("The list is: ")
-    println(_listLen)
-    return _listLen
-end
+
 
 
 #Ask for, and read input in from the user
@@ -87,7 +89,7 @@ else
     print("\n")
     listLen = askForInput(inputInt) # get input from user
     #Call the aver function with your newly filled array
-    #The aver function will also call the co
+    #The aver function will also call the greaterThanAverage function
     aver(listLen)   # get average of values from user
 
 
